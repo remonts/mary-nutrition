@@ -3,30 +3,36 @@ var titulo = document.querySelector(".title");
 titulo.textContent = "Renan Monteiro Nutrição";
 
 //Buscando pacientes
-var paciente = document.querySelector("#primeiro-paciente");
+var pacientes = document.querySelectorAll(".paciente");
 
-var tdPeso = paciente.querySelector(".info-peso");
-var peso = tdPeso.textContent;
+for (var i = 0; i < pacientes.length; i++) {
+    var paciente = pacientes[i];
 
-var tdAltura = paciente.querySelector(".info-altura");
-var altura = tdAltura.textContent;
+    var tdPeso = paciente.querySelector(".info-peso");
+    var peso = tdPeso.textContent;
 
-var tdIMC = paciente.querySelector(".info-imc");
+    var tdAltura = paciente.querySelector(".info-altura");
+    var altura = tdAltura.textContent;
 
-var pesoValido = true;
-var alturaValida = true;
+    var tdIMC = paciente.querySelector(".info-imc");
 
-if (peso <= 0 || peso >= 500) {
-    pesoValido = false;
-    tdIMC.textContent = "Peso inválido.";
-}
+    var pesoValido = true;
+    var alturaValida = true;
 
-if (altura <= 0 || altura > 3.00) {
-    alturaValida = false;
-    tdIMC.textContent = "Altura inválida.";
-}
+    if (peso <= 0 || peso >= 500) {
+        pesoValido = false;
+        tdIMC.textContent = "Peso inválido.";
+        paciente.classList.add("paciente-invalido");
+    }
 
-if (pesoValido && alturaValida) {
-    var imc = (peso / (altura * altura));
-    tdIMC.textContent = imc;
+    if (altura <= 0 || altura > 3.00) {
+        alturaValida = false;
+        tdIMC.textContent = "Altura inválida.";
+        paciente.classList.add("paciente-invalido");
+    }
+
+    if (pesoValido && alturaValida) {
+        var imc = (peso / (altura * altura));
+        tdIMC.textContent = imc.toFixed(2);
+    }
 }

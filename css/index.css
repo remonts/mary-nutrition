@@ -125,10 +125,6 @@ button[disabled=disabled], button:disabled {
 
 }
 
-.adicionar-paciente{
-    margin-top: 30px;
-}
-
-.campo-invalido{
-	border: 1px solid red;
+.paciente-invalido {
+	background-color: red;
 }

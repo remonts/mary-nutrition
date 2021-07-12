@@ -1,6 +1,6 @@
 //Alterar título do site
 var titulo = document.querySelector(".title");
-titulo.textContent = "Renan Monteiro Nutrição";
+titulo.textContent = "Maria Nutrição";
 
 //Buscando pacientes
 var pacientes = document.querySelectorAll(".paciente");
@@ -36,3 +36,9 @@ for (var i = 0; i < pacientes.length; i++) {
         tdIMC.textContent = imc.toFixed(2);
     }
 }
+
+var botaoAdicionar = document.querySelector("#adicionar-paciente");
+botaoAdicionar.addEventListener("click", function(event){
+    event.preventDefault();
+    console.log("cliquei no botão.");
+})

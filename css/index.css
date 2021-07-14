@@ -46,9 +46,10 @@ section{
 section h2{
 	font-size: 3em;
 	display: block;
-	padding-bottom: .5em;
+	padding-bottom: 10px;
 	border-bottom: 1px solid #ccc;
-	margin-bottom: .5em;
+	margin-bottom: 10px;
+	margin-top: 20px;
 }
 
 table{
@@ -127,4 +128,9 @@ button[disabled=disabled], button:disabled {
 
 .paciente-invalido {
 	background-color: red;
+}
+
+#mensagem-erro {
+	color: red;
+	font-weight: bold;
 }

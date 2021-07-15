@@ -133,4 +133,6 @@ button[disabled=disabled], button:disabled {
 #mensagems-erro {
 	color: red;
 	font-weight: bold;
+	margin-top: 20px;
+	margin-bottom: 15px;
 }

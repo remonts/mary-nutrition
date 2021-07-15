@@ -12,11 +12,11 @@ botaoAdicionar.addEventListener("click", function (event) {
     var paciente = obtemInformacoesDoForm(form);
 
     var pacienteTr = montaTr(paciente);
-    var erro = validaPaciente(paciente);
+    var erros = validaPaciente(paciente);
+    console.log(erros);
 
-    if (erro.length > 0) {
-        var mensagemErro = document.querySelector("#mensagem-erro");
-        mensagemErro.textContent = erro;
+    if (erros.length > 0) {
+        exibeMensagemsDeErro(erros); 
         form.reset();
         return;
     }
@@ -27,6 +27,15 @@ botaoAdicionar.addEventListener("click", function (event) {
     // limpar os campos do form
     form.reset();
 });
+
+function exibeMensagemsDeErro(erros) {
+    var ul = document.querySelector("#mensagems-erro");
+    erros.forEach(erro => {
+        var li = document.createElement("li");
+        li.textContent = erro;
+        ul.appendChild(li);
+    });
+}
 
 function obtemInformacoesDoForm(form) {
 
